@@ -1,0 +1,244 @@
+﻿
+.BTN_div {
+    color: White;
+    border: 1px dashed white;
+    /*background: #F6358A;*/
+    background: #4169E1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width: 80%;
+    height: 40px;
+    font-weight: bold;
+    align-content: center;
+}
+
+.Top_Menu_div {
+    color: White;
+    border: 1px dashed white;
+    /*background: #F6358A;*/
+    background: #4169E1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width: 98%;
+    height: 60px;
+    font-weight: bold;
+    align-content: center;
+}
+
+.Choice_Play_Type_Guide {
+    border: 1px dashed red;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    word-wrap: break-word;
+    width: 100%;
+    height: 100%;
+}
+
+.Choice_Play_Type_Guide_Blue {
+    border: 1px dashed #4169E1;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    word-wrap: break-word;
+    width: 100%;
+    height: 100%;
+}
+
+.Choice_Play_Type_td_Left {
+    width: 25%;
+    padding: 10px;
+}
+
+.Choice_Play_Type_td_Right {
+    padding: 10px;
+}
+
+
+.Choice_Play_Type_Guide_Title {
+    padding: 5px;
+    display: inline-block;
+}
+
+.Choice_Play_Type_Guide_Content {
+    padding: 5px;
+    display: inline-block;
+}
+
+.TOP_Title {
+    display: none;
+}
+
+.Space_Line_Blue {
+    height: 1px;
+    background-color: #4169E1;
+}
+
+.Space_Line_Blue_2 {
+    height: 2px;
+    background-color: #4169E1;
+}
+
+.Answer {
+    border: 1px dashed #4169E1;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    word-wrap: break-word;
+    background-color: white;
+    margin: 10px;
+    padding: 5px;
+}
+
+.Answer_Selected {
+    border: 1px dashed red;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    word-wrap: break-word;
+    background-color: white;
+    margin: 10px;
+    padding: 5px;
+}
+
+#Try_Another_btn {
+    border: 1px dashed red;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    word-wrap: break-word;
+    background-color: white;
+    padding: 10px;
+}
+
+.Informaiton_tbx {
+    width: 100%;
+    border: 1px dashed #4169E1;
+    text-align: center;
+    font-size: 18pt;
+}
+
+.Informaiton_tbx_2 {
+    width: 90%;
+    border: 1px dashed #4169E1;
+    text-align: center;
+    font-size: 18pt;
+}
+
+.Informaiton_tbx_3 {
+    width: 90%;
+    border: 1px dashed #4169E1;
+    text-align: center;
+    font-size: 18pt;
+}
+
+#Share_btn {
+    border: 2px dashed #4169E1;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    word-wrap: break-word;
+    background-color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.Blue_btn {
+    border: 2px dashed #4169E1;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    word-wrap: break-word;
+    background-color: white;
+    padding: 10px;
+}
+
+.More_Reward_Guide {
+}
+
+.Answer_tbx {
+    border: 1px solid red;
+    text-align: center;
+    font-size: 18pt;
+    margin: 10px;
+    text-transform: uppercase;
+    height: 40px;
+}
+
+.Answer_btn {
+    border: 2px dashed #4169E1;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    word-wrap: break-word;
+    background-color: white;
+    margin: 10px;
+    width: 60px;
+    height: 40px;
+}
+
+.Support_Friend_btn {
+    border: 1px solid #4169E1;
+    width: 250px;
+    background-color: white;
+    margin: 5px;
+}
+
+.Play_tbl {
+    border: 2px solid #4169E1;
+    border-collapse: collapse;
+}
+
+    .Play_tbl td, Play_tbl th {
+        border: 2px solid #4169E1;
+        border-collapse: collapse;
+    }
+
+
+.Play_Border_Dashed_Blue {
+    border: 3px dashed #4169E1;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.Play_Border_Dashed_Red {
+    border: 3px dashed red;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.Play_Border_Dashed_White {
+    border: 3px dashed white;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+.Play_Time_lbl {
+    font-size: 45pt !important;
+}
+
+
+.Round_TOP_Picture {
+    max-width: 30px;
+    max-height: 30px;
+}
+
+
+#Round_TOP_tbl {
+    border: 1px solid #4169E1;
+    border-collapse: collapse;
+}
+
+    #Round_TOP_tbl td, #Round_TOP_tbl th {
+        border: 1px solid #4169E1;
+        border-collapse: collapse;
+    }
+
+.Program_Reward_td {
+    padding: 5px;
+}
