@@ -22330,6 +22330,7 @@ hr {
     }
 }
 
+
 @media (min-width: 768px) {
     .inset-sm-left-0 {
         padding-left: 0;
@@ -24546,6 +24547,12 @@ html .page .offset-top-115 {
 @media (min-width: 992px) and (max-width: 1799px) {
     .post-modern .post-meta-list {
         max-width: 63%;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 799px) {
+    .slider-menu-position{
+        z-index: 10 !important;
     }
 }
 
