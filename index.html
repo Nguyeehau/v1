@@ -48,6 +48,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <script type="text/javascript" src="./Content/js/jquery-ui-1.10.3.js"></script>
   <link rel="stylesheet" type="text/css" href="./Content/css/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css">
   <script type="text/javascript" src="./Content/js/json2.js"></script>
   <script type="text/javascript" src="./Content/js/jquery.JScrollPane.js"></script>
   <script type="text/javascript" src="./Content/js/jquery.mousewheel.js"></script>
@@ -259,11 +260,11 @@
                               <div class="rd-navbar-nav-wrap reveal-md-inline-block">
                                   <ul class="rd-navbar-nav">
                                       <!-- RD Navbar Nav-->
-                                      <li id="Menu_1" class=""><a href="#" onclick="Menu_OnClick('Home_div'); return false;" class="Mouse_Hand">Đam mê công nghệ</a></li>
-                                      <li id="Menu_2" class=""><a href="#" onclick="Menu_OnClick('KiemSoat_div'); return false;" class="Mouse_Hand">Gia đình</a></li>
-                                      <li id="Menu_3" class=""><a href="#" onclick="Menu_OnClick('QuangCao_div'); return false;" class="Mouse_Hand">Tình bạn</a></li>
-                                      <li id="Menu_4" class="active"><a href="#" onclick="Menu_OnClick('Contact_div'); return false;" class="Mouse_Hand">Tình yêu</a></li>
-                                      <li id="Menu_5" class=""><a href="#" onclick="Menu_OnClick('Contact_div'); return false;" class="Mouse_Hand">Cuộc sống</a></li>
+                                      <li id="Menu_1" class=""><a href="#" onclick="Menu_OnClick('Home_div'); return false;" class="Mouse_Hand">Technology</a></li>
+                                      <li id="Menu_2" class=""><a href="#" onclick="Menu_OnClick('Activities'); return false;" class="Mouse_Hand">Social & Activities</a></li>
+                                      <li id="Menu_3" class=""><a href="#" onclick="Menu_OnClick('Development'); return false;" class="Mouse_Hand">Development Team</a></li>
+                                      <li id="Menu_4" class="active"><a href="#" onclick="Menu_OnClick('Expand'); return false;" class="Mouse_Hand">Easy to expand</a></li>
+                                      <li id="Menu_5" class=""><a href="#" onclick="Menu_OnClick('Contact_div'); return false;" class="Mouse_Hand">Software</a></li>
                                   </ul>
                               </div>
                           </div>
@@ -322,7 +323,7 @@
                       </tr>
                       <tr id="VTV_Link_tr_2">
                           <td align="center" style="padding-top: 10px;">
-                              <a style="background-color: white; color: red; font-size: 18pt;" href="javascript:">Profile: @Nguyễn Văn Hậu</a>
+                              <a style="background-color: white; color: red; font-size: 18pt;" href="javascript:">Scan QR: Nguyễn Văn Hậu</a>
                           </td>
                       </tr>
                   </tbody>
@@ -333,57 +334,75 @@
                     <h2 class="text-spacing-0">Social and Activities</h2>
                     <div class="range range-xs-center margin-top-50">
                       <div class="cell-sm-10">
-                          <div data-items="1" data-sm-items="2" data-md-items="5" data-xs-stage-padding="5" data-loop="false" data-margin="30" data-lg-margin="20" data-mouse-drag="true" data-nav="true" data-dots="true" class="owl-carousel owl-nav-absolute owl-nav-primary owl-theme owl-loaded" >
+                          <div data-items="1" data-sm-items="2" data-md-items="3" data-xs-stage-padding="5" data-loop="false" data-margin="30" data-lg-margin="20" data-mouse-drag="true" data-nav="false" data-dots="true" class="owl-carousel owl-nav-absolute owl-nav-primary owl-theme owl-loaded" >
                             <div class="owl-stage-outer">
                                 <div class="owl-item">
                                     <!-- Post Destination-->
                                     <div class="post-destination">
-                                       <img src="./Content/images/bowling/1-747x420.jpg" class="img-circle img-responsive center-block">
+                                       <a href="./Content/images/bowling/1-747x420_v2.jpg" data-fancybox="images" data-caption="Backpackers following a dirt trail">
+                                        <img src="./Content/images/bowling/1-747x420.jpg" />
+                                      </a>
                                     </div>
                                 </div></div><div class="owl-item active"><div class="owl-item">
                                     <!-- Post Destination-->
                                     <div class="post-destination">
-                                       <img src="./Content/images/bowling/2-2048x1152.jpg" class="img-circle img-responsive center-block">
+                                       <a href="./Content/images/bowling/2-2048x1152_v2.jpg" data-fancybox="images" data-caption="Mallorca, Llubí, Spain">
+                                        <img src="./Content/images/bowling/2-2048x1152.jpg" />
+                                      </a>
                                     </div>
                                 </div></div><div class="owl-item active"><div class="owl-item">
                                     <!-- Post Destination-->
                                     <div class="post-destination">
-                                       <img src="./Content/images/bowling/5-2048x1365.jpg" class="img-circle img-responsive center-block">
+                                       <a href="./Content/images/bowling/5-2048x1365 (1).jpg" data-fancybox="images" data-caption="Mallorca, Llubí, Spain">
+                                        <img src="./Content/images/bowling/5-2048x1365.jpg" />
+                                      </a>
                                     </div>
                                 </div></div><div class="owl-item active"><div class="owl-item">
                                     <!-- Post Destination-->
                                     <div class="post-destination">
-                                       <img src="./Content/images/bowling/6-2048x1365.jpg" class="img-circle img-responsive center-block">
+                                       <a href="./Content/images/bowling/6-2048x1365_v2.jpg" data-fancybox="images" data-caption="Mallorca, Llubí, Spain">
+                                        <img src="./Content/images/bowling/6-2048x1365.jpg" />
+                                      </a>
                                     </div>
                                 </div></div><div class="owl-item active"><div class="owl-item">
                                     <!-- Post Destination-->
                                     <div class="post-destination">
-                                       <img src="./Content/images/bowling/10-2048x1152.jpg" class="img-circle img-responsive center-block">
+                                       <a href="./Content/images/bowling/10-2048x1152 (1).jpg" data-fancybox="images" data-caption="Mallorca, Llubí, Spain">
+                                        <img src="./Content/images/bowling/10-2048x1152.jpg" />
+                                      </a>
                                     </div>
                                 </div></div>
                                 <div class="owl-item active"><div class="owl-item">
                                     <!-- Post Destination-->
                                     <div class="post-destination">
-                                       <img src="./Content/images/bowling/11-2048x1152.jpg" class="img-circle img-responsive center-block">
+                                       <a href="./Content/images/bowling/11-2048x1152 (1).jpg" data-fancybox="images" data-caption="Mallorca, Llubí, Spain">
+                                        <img src="./Content/images/bowling/11-2048x1152.jpg" />
+                                      </a>
                                     </div>
                                 </div></div>
                               
                                 <div class="owl-item active"><div class="owl-item">
                                     <!-- Post Destination-->
                                     <div class="post-destination">
-                                       <img src="./Content/images/bowling/28-2048x1365.jpg" class="img-circle img-responsive center-block">
+                                       <a href="./Content/images/bowling/28-2048x1365 (1).jpg" data-fancybox="images" data-caption="Mallorca, Llubí, Spain">
+                                        <img src="./Content/images/bowling/28-2048x1365.jpg" />
+                                      </a>
                                     </div>
                                 </div></div>
                                 <div class="owl-item active"><div class="owl-item">
                                     <!-- Post Destination-->
                                     <div class="post-destination">
-                                       <img src="./Content/images/bowling/29-2048x1365.jpg" class="img-circle img-responsive center-block">
+                                       <a href="./Content/images/bowling/29-2048x1365 (1).jpg" data-fancybox="images" data-caption="Mallorca, Llubí, Spain">
+                                        <img src="./Content/images/bowling/29-2048x1365.jpg" />
+                                      </a>
                                     </div>
                                 </div></div>
                                 <div class="owl-item active"><div class="owl-item">
                                     <!-- Post Destination-->
                                     <div class="post-destination">
-                                       <img src="./Content/images/bowling/30-2048x1365.jpg" class="img-circle img-responsive center-block">
+                                       <a href="./Content/images/bowling/30-2048x1365 (1).jpg" data-fancybox="images" data-caption="Mallorca, Llubí, Spain">
+                                        <img src="./Content/images/bowling/30-2048x1365.jpg" />
+                                      </a>
                                     </div>
                                 </div></div>
                             </div>
@@ -394,7 +413,7 @@
             </section>
 
               <!-- KiemSoat -->
-            <section id="KiemSoat_div" class="padding-top-50">
+            <section id="Development" class="padding-top-50">
                 <div class="shell">
                     <h2 class="text-spacing-0 text-center">Development Team</h2>
                     <div class="range range-xs-center margin-top-50">
@@ -435,7 +454,7 @@
             </section>
 
               <!-- QuangCao -->
-              <section id="QuangCao_div" class="padding-top-50">
+              <section id="Expand" class="padding-top-50">
                   <div class="shell">
                       <h2 class="text-spacing-0 text-center">Easy to expand</h2>
                       <div class="range range-xs-center margin-top-50">
@@ -557,6 +576,7 @@
       <!-- Java script-->
       <script src="./Content/js/JQuery_All_After.js"></script>
       <script src="./Content/js/Onload.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 
       <!-- HDF -->
       <input type="hidden" name="Index_Host_hdf" id="Index_Host_hdf" value="http://nguyenvanhau.com">
