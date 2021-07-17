@@ -1900,6 +1900,7 @@ $document.ready(function () {
     }
 });
 
+
 consoleText(['Scan QR: Nguyễn Văn Hậu', 'NguyenVanHau.com', 'Made with Love'], 'text',['tomato','rebeccapurple','lightblue']);
 
 function consoleText(words, id, colors) {
@@ -1938,14 +1939,10 @@ function consoleText(words, id, colors) {
   }, 120)
   window.setInterval(function() {
     if (visible === true) {
-      con.className = 'console-underscore hidden'
       visible = false;
 
     } else {
-      con.className = 'console-underscore'
-
       visible = true;
     }
   }, 400)
 }
-
