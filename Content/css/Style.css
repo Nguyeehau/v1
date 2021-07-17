@@ -1102,6 +1102,10 @@ table th[class*="col-"] {
 }
 
 @media screen and (max-width: 767px) {
+    .span_1_of_3 {
+        width: 100% !important;
+        flex-basis: auto;
+    }
     .table-responsive {
         width: 100%;
         margin-bottom: 18px;
@@ -11093,12 +11097,12 @@ address {
 }
 
 .page .text-primary {
-    color: #f16ea6;
+    color: #f16ea6 !important;
 }
 
 .page a.text-primary:hover,
 .page a.text-primary:focus {
-    color: #ed3f89;
+    color: #ed3f89 !important;
 }
 
 .page .text-turquoise {
@@ -43276,4 +43280,51 @@ a.pswp__share--download:hover {
 
 .section-md-bottom-10 {
         padding-bottom: 10px;
-    }
+}
+
+.section-features-title p{
+    font-size: 16px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 200;
+    line-height: 145%;
+    word-spacing: 1px;
+}
+  .section-features-title h4.text-spacing-0:after {
+            content: " ";
+            display: block;
+            height: 2px;
+            background-color: #ff0044;
+            width: 100px;
+            margin: 10px auto;
+        }
+        .section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+/*  GROUPING  */
+.group:before,
+.group:after {
+	content:"";
+	display:table;
+}
+.group:after {
+	clear:both;
+}
+.group {
+    zoom:1; /* For IE 6/7 */
+}
+        .span_1_of_3 {
+	width: 32.2%;
+}

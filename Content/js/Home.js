@@ -158,7 +158,7 @@ function On_Window_Timer() {
             //
             var Menu_Blinking_Next = Menu_Blinking + 1;
 
-            if (Menu_Blinking_Next == 6) {
+            if (Menu_Blinking_Next == 7) {
                 Menu_Blinking_Next = 1;
             }
 
