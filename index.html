@@ -56,15 +56,15 @@
     <link rel="stylesheet" type="text/css" href="./Content/css/IQ_App.css" />
     <link rel="stylesheet" type="text/css" href="./Content/css/IQ_Backup.css" />
     <link rel="stylesheet" type="text/css" href="./Content/css/IQ_Web.css" />
-
+    <link rel="stylesheet" type="text/css" href="./Content/css/jquery.JScrollPane.css" />
+    <link rel="stylesheet" type="text/css" href="./Content/css/fine-uploader-gallery.css" />
+    <link rel="stylesheet" type="text/css" href="./Content/css/mussic.css" />
     <!-- Javascript -->
     <script type="text/javascript" src="./Content/js/json2.js"></script>
     <script type="text/javascript" src="./Content/js/jquery.JScrollPane.js"></script>
     <script type="text/javascript" src="./Content/js/jquery.mousewheel.js"></script>
     <script type="text/javascript" src="./Content/js/mwheelIntent.js"></script>
-    <link rel="stylesheet" type="text/css" href="./Content/css/jquery.JScrollPane.css" />
     <script type="text/javascript" src="./Content/js/fine-uploader.js"></script>
-    <link rel="stylesheet" type="text/css" href="./Content/css/fine-uploader-gallery.css" />
     <script type="text/javascript" src="./Content/js/jquery.watermark.js"></script>
     <script type="text/javascript" src="./Content/js/highslide-full.js"></script>
     <link rel="stylesheet" type="text/css" href="./Content/css/highslide.css" />
@@ -126,7 +126,9 @@
         .highslide img {
             cursor: url(http://w3.UpdatesManagers.com/_Plugin/Highslide/graphics/zoomin.cur), pointer !important;
         }
-
+        .royOrbison .album:before {
+background-image: url('./Content/images/123.jpg');
+}
         .highslide-viewport-size {
             position: fixed;
             width: 100%;
@@ -143,92 +145,7 @@
         }
     </style>
     <style>
-        .glot-sub-active {
-            color: #1296ba !important;
-        }
-
-        .glot-sub-hovered {
-            color: #1296ba !important;
-        }
-
-        .glot-sub-clzz {
-            cursor: pointer;
-            line-height: 1.2;
-            font-size: 32px;
-            color: #FFCC00;
-            background: rgba(17, 17, 17, 0.7);
-        }
-
-            .glot-sub-clzz:hover {
-                color: #1296ba !important;
-            }
-
-        .ej-trans-sub {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999999;
-            cursor: move;
-        }
-
-            .ej-trans-sub > span {
-                color: #3CF9ED;
-                font-size: 18px;
-                text-align: center;
-                padding: 0 16px;
-                line-height: 1.5;
-                background: rgba(32, 26, 25, 0.8);
-                /* text-shadow: 0px 1px 4px black; */
-                padding: 0 8px;
-                line-Height: 1.2;
-                font-size: 22px;
-                color: #0CB1C7;
-                background: rgba(67, 65, 65, 0.7);
-            }
-
-        .ej-main-sub {
-            position: absolute;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 99999999;
-            cursor: move;
-            padding: 0 8px;
-        }
-
-            .ej-main-sub > span {
-                color: white;
-                font-size: 20px;
-                line-height: 1.5;
-                text-align: center;
-                background: rgba(32, 26, 25, 0.8);
-                /* // text-shadow: 0px 1px 4px black; */
-                padding: 2px 8px;
-                line-Height: 1.2;
-                font-size: 32px;
-                color: #FFCC00;
-                background: rgba(17, 17, 17, 0.7);
-            }
-
-            .ej-main-sub .glot-sub-clzz {
-                background: transparent !important
-            }
-
-        .tran-subtitle > .view-icon-edit-sub {
-            cursor: pointer;
-            padding-left: 10px;
-            top: 2px;
-            position: relative;
-        }
-
-            .tran-subtitle > .view-icon-edit-sub > svg {
-                width: 16px;
-                height: 16px;
-                pointer-events: none;
-            }
+        
     </style>
 </head>
 <body id="Page_Body" onload="Home_Onload(); " data-new-gr-c-s-check-loaded="14.1021.0" data-gr-ext-installed="" cz-shortcut-listen="true">
@@ -344,6 +261,44 @@
                     </tbody>
                 </table>
 
+                <section class="player">
+                    <div class="contentWrapper">
+                        <div class="musicSwitch">
+                          <div class="button _prev" id="prev"></div>
+                          <div class="button _next" id="next"></div>
+                        </div>
+                        <div id="jsAlbum">
+                          <div class="album _play">
+                            <div class="album__internal"></div>
+                          </div>
+                        </div>
+                        <div class="musicInfo">
+                          <h1 class="musicInfo__name">Put On Your Sunday</h1>
+                          <h2 class="musicInfo__author">Jerry Herman</h2>
+                        </div>
+                        <div class="musicTime">
+                          <p class="musicTime__current">00:00</p>
+                          <p class="musicTime__last">05:01</p>
+                        </div>
+                        <div class="musicBar" id="progress">
+                          <div class="musicBar__length" id="length">
+                            <div class="button musicBar__circle">
+                              <div class="musicBar__circlePoint"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="musicOrder">
+                          <div class="musicOrder__loop _loop" id="loop"></div>
+                          <div class="musicOrder__shuffle" id="shuffle"></div>
+                        </div>
+                        <div class="musicControl">
+                          <div class="button musicControl__backward" id="backward"></div>
+                          <div class="button musicControl__play _play" id="play"></div>
+                          <div class="button musicControl__forward" id="forward"></div>
+                        </div>
+                      </div>
+                </section>
+
                 <section id="Expertise" class="padding-top-50">
                     <div class="shell section-features-title">
                         <h4 class="text-spacing-0">My Expertise</h4>
@@ -378,7 +333,7 @@
                                             <!-- Post Destination-->
                                             <div class="post-destination">
                                                 <a href="./Content/images/bowling/1-747x420_v2.jpg" data-fancybox="images" data-caption="photo://nguyenvanhau.com">
-                                                    <img src="./Content/images/bowling/1-747x420.jpg" />
+                                                    <img data-src="./Content/images/bowling/1-747x420.jpg" loading="lazy" class="lazy" />
                                                 </a>
                                             </div>
                                         </div>
@@ -388,7 +343,7 @@
                                             <!-- Post Destination-->
                                             <div class="post-destination">
                                                 <a href="./Content/images/bowling/2-2048x1152_v2.jpg" data-fancybox="images" data-caption="photo://nguyenvanhau.com">
-                                                    <img src="./Content/images/bowling/2-2048x1152.jpg" />
+                                                    <img data-src="./Content/images/bowling/2-2048x1152.jpg" loading="lazy" class="lazy"/>
                                                 </a>
                                             </div>
                                         </div>
@@ -398,7 +353,7 @@
                                             <!-- Post Destination-->
                                             <div class="post-destination">
                                                 <a href="./Content/images/bowling/5-2048x1365 (1).jpg" data-fancybox="images" data-caption="photo://nguyenvanhau.com">
-                                                    <img src="./Content/images/bowling/5-2048x1365.jpg" />
+                                                    <img data-src="./Content/images/bowling/5-2048x1365.jpg" loading="lazy" class="lazy"/>
                                                 </a>
                                             </div>
                                         </div>
@@ -408,7 +363,7 @@
                                             <!-- Post Destination-->
                                             <div class="post-destination">
                                                 <a href="./Content/images/bowling/6-2048x1365_v2.jpg" data-fancybox="images" data-caption="photo://nguyenvanhau.com">
-                                                    <img src="./Content/images/bowling/6-2048x1365.jpg" />
+                                                    <img data-src="./Content/images/bowling/6-2048x1365.jpg" loading="lazy" class="lazy"/>
                                                 </a>
                                             </div>
                                         </div>
@@ -418,7 +373,7 @@
                                             <!-- Post Destination-->
                                             <div class="post-destination">
                                                 <a href="./Content/images/bowling/10-2048x1152 (1).jpg" data-fancybox="images" data-caption="photo://nguyenvanhau.com">
-                                                    <img src="./Content/images/bowling/10-2048x1152.jpg" />
+                                                    <img data-src="./Content/images/bowling/10-2048x1152.jpg" loading="lazy" class="lazy"/>
                                                 </a>
                                             </div>
                                         </div>
@@ -428,7 +383,7 @@
                                             <!-- Post Destination-->
                                             <div class="post-destination">
                                                 <a href="./Content/images/bowling/11-2048x1152 (1).jpg" data-fancybox="images" data-caption="photo://nguyenvanhau.com">
-                                                    <img src="./Content/images/bowling/11-2048x1152.jpg" />
+                                                    <img data-src="./Content/images/bowling/11-2048x1152.jpg" loading="lazy" class="lazy"/>
                                                 </a>
                                             </div>
                                         </div>
@@ -438,7 +393,7 @@
                                             <!-- Post Destination-->
                                             <div class="post-destination">
                                                 <a href="./Content/images/bowling/28-2048x1365 (1).jpg" data-fancybox="images" data-caption="Mallorca, Llubí, Spain">
-                                                    <img src="./Content/images/bowling/28-2048x1365.jpg" />
+                                                    <img data-src="./Content/images/bowling/28-2048x1365.jpg" loading="lazy" class="lazy"/>
                                                 </a>
                                             </div>
                                         </div>
@@ -448,7 +403,7 @@
                                             <!-- Post Destination-->
                                             <div class="post-destination">
                                                 <a href="./Content/images/bowling/29-2048x1365 (1).jpg" data-fancybox="images" data-caption="Mallorca, Llubí, Spain">
-                                                    <img src="./Content/images/bowling/29-2048x1365.jpg" />
+                                                    <img data-src="./Content/images/bowling/29-2048x1365.jpg" loading="lazy" class="lazy"/>
                                                 </a>
                                             </div>
                                         </div>
@@ -458,7 +413,7 @@
                                             <!-- Post Destination-->
                                             <div class="post-destination">
                                                 <a href="./Content/images/bowling/30-2048x1365 (1).jpg" data-fancybox="images" data-caption="Mallorca, Llubí, Spain">
-                                                    <img src="./Content/images/bowling/30-2048x1365.jpg" />
+                                                    <img data-src="./Content/images/bowling/30-2048x1365.jpg" loading="lazy" class="lazy"/>
                                                 </a>
                                             </div>
                                         </div>
@@ -480,7 +435,7 @@
                                         <div class="owl-item">
                                             <!-- Post Destination-->
                                             <div class="post-destination">
-                                                <img src="./Content/images/hn1.jpg" class="img-circle img-responsive center-block" />
+                                                <img data-src="./Content/images/hn1.jpg" loading="lazy" class="lazy img-circle img-responsive center-block" />
                                             </div>
                                         </div>
                                     </div>
@@ -488,7 +443,7 @@
                                         <div class="owl-item">
                                             <!-- Post Destination-->
                                             <div class="post-destination">
-                                                <img src="./Content/images/hn2.jpg" class="img-circle img-responsive center-block" />
+                                                <img data-src="./Content/images/hn2.jpg" loading="lazy" class="lazy img-circle img-responsive center-block" />
                                             </div>
                                         </div>
                                     </div>
@@ -496,7 +451,7 @@
                                         <div class="owl-item">
                                             <!-- Post Destination-->
                                             <div class="post-destination">
-                                                <img src="./Content/images/hn3.jpg" class="img-circle img-responsive center-block" />
+                                                <img data-src="./Content/images/hn3.jpg" loading="lazy" class="lazy img-circle img-responsive center-block" />
                                             </div>
                                         </div>
                                     </div>
@@ -504,7 +459,7 @@
                                         <div class="owl-item">
                                             <!-- Post Destination-->
                                             <div class="post-destination">
-                                                <img src="./Content/images/hn4.jpg" class="img-circle img-responsive center-block" />
+                                                <img data-src="./Content/images/hn4.jpg" loading="lazy" class="lazy img-circle img-responsive center-block" />
                                             </div>
                                         </div>
                                     </div>
@@ -512,7 +467,7 @@
                                         <div class="owl-item">
                                             <!-- Post Destination-->
                                             <div class="post-destination">
-                                                <img src="./Content/images/5.jpg" class="img-circle img-responsive center-block" />
+                                                <img data-src="./Content/images/5.jpg" loading="lazy" class="lazy img-circle img-responsive center-block" />
                                             </div>
                                         </div>
                                     </div>
@@ -533,7 +488,7 @@
                                         <div class="owl-item">
                                             <!-- Post Destination-->
                                             <div class="post-destination">
-                                                <img src="./Content/images/Mask-Group-85-2.png" class="img-circle img-responsive center-block" />
+                                                <img data-src="./Content/images/Mask-Group-85-2.png" loading="lazy" class="lazy img-circle img-responsive center-block" />
                                             </div>
                                         </div>
                                     </div>
@@ -541,7 +496,7 @@
                                         <div class="owl-item">
                                             <!-- Post Destination-->
                                             <div class="post-destination">
-                                                <img src="./Content/images/Mask-Group-94-1.png" class="img-circle img-responsive center-block" />
+                                                <img data-src="./Content/images/Mask-Group-94-1.png" loading="lazy" class="lazy img-circle img-responsive center-block" />
                                             </div>
                                         </div>
                                     </div>
@@ -549,7 +504,7 @@
                                         <div class="owl-item">
                                             <!-- Post Destination-->
                                             <div class="post-destination">
-                                                <img src="./Content/images/Mask-Group-97 - Copy.png" class="img-circle img-responsive center-block" />
+                                                <img data-src="./Content/images/Mask-Group-97 - Copy.png" loading="lazy" class="lazy img-circle img-responsive center-block" />
                                             </div>
                                         </div>
                                     </div>
@@ -557,7 +512,7 @@
                                         <div class="owl-item">
                                             <!-- Post Destination-->
                                             <div class="post-destination">
-                                                <img src="./Content/images//thanh-toan-qua-onepay.jpg" class="img-circle img-responsive center-block" />
+                                                <img data-src="./Content/images//thanh-toan-qua-onepay.jpg" loading="lazy" class="lazy img-circle img-responsive center-block" />
                                             </div>
                                         </div>
                                     </div>
@@ -565,7 +520,7 @@
                                         <div class="owl-item">
                                             <!-- Post Destination-->
                                             <div class="post-destination">
-                                                <img src="./Content/images/images.jpg" class="img-circle img-responsive center-block" />
+                                                <img data-src="./Content/images/images.jpg" loading="lazy" class="lazy img-circle img-responsive center-block" />
                                             </div>
                                         </div>
                                     </div>
@@ -656,6 +611,8 @@
         <script src="./Content/js/JQuery_All_After.js"></script>
         <script src="./Content/js/Onload.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
+        <script src="./Content/js/lazyload.js"></script>
+        <script src="./Content/js/music.js"></script>
         <!-- HDF -->
         <input type="hidden" name="Index_Host_hdf" id="Index_Host_hdf" value="http://nguyenvanhau.com" />
         <input type="hidden" name="Upload_Host_hdf" id="Upload_Host_hdf" value="profile:nguyenvanhau" />

@@ -7933,9 +7933,9 @@ button.close {
     }
 }
 
-html *:first-child {
+/* html *:first-child {
     margin-top: 0;
-}
+} */
 
 html *:last-child {
     margin-bottom: 0;
@@ -10621,8 +10621,22 @@ mark, .mark {
 .text-extra-big {
     font-size: 42px;
 }
-
+.musicmix .album:before {
+    background-image: url('https://i.ytimg.com/vi/EYKyhCkvsTI/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBJxc0PiQwwa52H6-K0OfFBolVDXA');
+    }
+    .orbison .album:before {
+    background-image: url('https://i.ytimg.com/vi/pw2QAsHO-Mo/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBOZ__7QNVACMHuDX6bNplmm3HuwQ');
+    }
+    
 @media (max-width: 767px) {
+    .player{
+        position: relative !important;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0 !important;
+        margin-top: 20px;
+    }
     .text-extra-big {
         line-height: 44px;
     }
