@@ -5,23 +5,45 @@ $("img.lazy").lazyload();
 		id: 1,
 		class: 'royOrbison',
 		url: "https://nguyeehau.github.io/webprofile/Content/mp3/playlist_huong_ly_tong_hop_nhung_bai_hat_hay_nhat_cua_ly_2021.mp3",
-		author: "Jerry Herman",
+		author: "Hương Ly",
 		title: "Put On Your Sunday"
 	},
 	{
 		id: 2,
+		class: 'royOrbison2',
+		url: "https://nguyeehau.github.io/webprofile/Content/mp3/pho_da_len_den_huyen_tam_mon_huong_ly_cover.mp3",
+		author: "Hương Ly",
+		title: "Phố đã lên đèn"
+	},
+	{
+		id: 3,
+		class: 'royOrbison2',
+		url: "https://nguyeehau.github.io/webprofile/Content/mp3/ha_con_vuong_nang.mp3",
+		author: "Hương Ly",
+		title: "Hạ còn vương nắng"
+	},
+	{
+		id: 4,
 		class: 'musicmix',
 		url: "https://nguyeehau.github.io/webprofile/Content/mp3/music_mix_2021_remixes_of_popular_songs_edm_best_music_mix_.mp3",
 		author: "Music Mix 2021",
 		title: "Magic Music"
 	},
 	{
-		id: 3,
+		id: 5,
+		class: 'royOrbison2',
+		url: "https://nguyeehau.github.io/webprofile/Content/mp3/dom_dom.mp3",
+		author: "Hương Ly",
+		title: "Dom Dóm"
+	},
+	{
+		id: 6,
 		class: 'orbison',
 		url: "https://nguyeehau.github.io/webprofile/Content/mp3/nhac_tre_moi_hay_nhat_2021_lien_khuc_nhac_tre_hay_nhat_hien_nay_2021.mp3",
 		author: "Roy Orbison",
 		title: "Oh, Pretty Woman"
 	},
+	
 ];
 
 let currentId = 0;
