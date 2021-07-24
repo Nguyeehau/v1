@@ -48,6 +48,7 @@
     <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <link rel="stylesheet" type="text/css" href="./Content/css/Style.css" />
     <link rel="stylesheet" type="text/css" href="./Content/css/Font.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Orbitron">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script type="text/javascript" src="./Content/js/jquery-ui-1.10.3.js"></script>
     <link rel="stylesheet" type="text/css" href="./Content/css/jquery-ui.css" />
@@ -146,9 +147,18 @@ background-image: url('./Content/images/huongly.jpg');
     text-align: center;
     margin-bottom: 10px;
         }
-    </style>
-    <style>
-        
+
+        .clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #424234;
+    font-size: 16px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+
+}
     </style>
 </head>
 <body id="Page_Body" onload="Home_Onload(); " data-new-gr-c-s-check-loaded="14.1021.0" data-gr-ext-installed="" cz-shortcut-listen="true">
@@ -269,6 +279,7 @@ background-image: url('./Content/images/huongly.jpg');
                         <div class="musicSwitch">
                           <div class="button _prev" id="prev"></div>
                           <div class="button _next" id="next"></div>
+                          <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
                         </div>
                         <div id="jsAlbum">
                           <div class="album _play">
@@ -616,6 +627,37 @@ background-image: url('./Content/images/huongly.jpg');
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
         <script src="./Content/js/lazyload.js"></script>
         <script src="./Content/js/music.js"></script>
+        <script type="text/javascript">
+            function showTime(){
+                var date = new Date();
+                var h = date.getHours(); // 0 - 23
+                var m = date.getMinutes(); // 0 - 59
+                var s = date.getSeconds(); // 0 - 59
+                var session = "AM";
+                
+                if(h == 0){
+                    h = 12;
+                }
+                
+                if(h > 12){
+                    h = h - 12;
+                    session = "PM";
+                }
+                
+                h = (h < 10) ? "0" + h : h;
+                m = (m < 10) ? "0" + m : m;
+                s = (s < 10) ? "0" + s : s;
+                
+                var time = h + ":" + m + ":" + s + " " + session;
+                document.getElementById("MyClockDisplay").innerText = time;
+                document.getElementById("MyClockDisplay").textContent = time;
+                
+                setTimeout(showTime, 1000);
+                
+            }
+            
+            showTime();
+            </script>
         <!-- HDF -->
         <input type="hidden" name="Index_Host_hdf" id="Index_Host_hdf" value="http://nguyenvanhau.com" />
         <input type="hidden" name="Upload_Host_hdf" id="Upload_Host_hdf" value="profile:nguyenvanhau" />
