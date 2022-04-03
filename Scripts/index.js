@@ -137,11 +137,11 @@ function UploadToCloud() {
                     }, 2000);
                 }
                 else {
-                    timer = setTimeout(UploadToCloud, 2000);
+                    timer = setTimeout(UploadToCloud, 3000);
                 }
             }
             else {
-                timer = setTimeout(UploadToCloud, 2000);  // will capture new image to detect barcode after 3000 mili second
+                timer = setTimeout(UploadToCloud, 3000);  // will capture new image to detect barcode after 3000 mili second
             }
         },
         // on error just show the message that no barcodes were found

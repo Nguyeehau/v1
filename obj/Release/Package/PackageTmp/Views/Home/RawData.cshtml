@@ -1,0 +1,153 @@
+﻿@model BarcodeReader.Models.QRModel
+@{
+    ViewBag.Title = "RawData";
+}
+
+<div style="margin-top: 50px">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Select Bank</th>
+                <th scope="col">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+                    <select class="form-control" id="TypeService" onchange="selectServices(this)">
+                        <option value="bidv">BIDV</option>
+                        <option value="hana">HANA</option>
+                    </select>
+                </th>
+                <td>
+                    <select class="form-control" id="TypeAmount" onchange="selectAmounts(this)">
+                        <option value="100000">100 000</option>
+                        <option value="200000">200 000</option>
+                        <option value="500000">500 000</option>
+                        <option value="1000000">1 000 000</option>
+                        <option value="2000000">2 000 000</option>
+                        <option value="3000000">3 000 000</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <input class="StartInvoice " type="button" onclick="StartInvoice();" value="Start Invoice..." /><br />
+    <input style="display: none" class="StartWithdrawalHana" type="button" onclick="UploadWithdrawalHana();" value="Start Withdrawal..." /><br />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th id="pnlResult" scope="col">Data response</th>
+            </tr>
+        </thead>
+    </table>
+    <div style="display: none" class="StartWithdrawal"><br/>
+        <input style="margin-bottom:20px" type="button" onclick="UploadWithdrawal();" value="Start Withdrawal..." /><br />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th id="pnlResultWithdrawal" scope="col">Data response</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    
+</div>
+@section scripts{
+    <script type="text/javascript">
+        var selectService = "bidv";
+        var selectAmount = "100000";
+        var terminalId = "120005";
+        var orderid = "";
+        // (all type of camera) gets the selection text of "barcode type to scan" combobox
+        function selectServices(type) {
+            selectService = type.options[type.selectedIndex].value;
+            if (selectService != "bidv") {
+                $(".StartInvoice").css("display", "none");
+                $(".StartWithdrawal").css("display", "none");
+                $(".StartWithdrawalHana").css("display", "block");
+            }
+            else {
+                $(".StartInvoice").css("display", "block");
+                $(".StartWithdrawalHana").css("display", "none");
+            }
+        }
+
+        function selectAmounts(type) {
+            selectAmount = type.options[type.selectedIndex].value;
+        }
+
+        function StartInvoice() {
+            $.post("@ViewBag.Url/api/invoices",
+                { input_type: "QR", raw_data: "@Model.raw_data" },
+                function (data) {
+                    if (data.terminal != null) {
+                        orderid = data.id;
+                        terminalId = data.terminal.id;
+                        $(".StartWithdrawal").css("display", "block");
+                    }
+                    $('#pnlResult').text(JSON.stringify(data));
+                }, "json");
+        }
+
+        function UploadWithdrawal(){
+            $.post("@ViewBag.Url/api/withdraws",
+                {
+                    "amount": selectAmount,
+                    "currency": "VND",
+                    "order": {
+                        "id": orderid,
+                        "information": null,
+                        "terminal": {
+                            "id": terminalId,
+                            "address": null,
+                            "latitude": 0.0,
+                            "longitude": 0.0
+                        }
+                    },
+                    "instrument": {
+                        "number": "6688990021459019",
+                        "cvv": "RlMZ0U/vZjOtgg5AQsJVohqLbCfNivhzXIwfqi2vyu2+VHe4fqk9jku3wbRpZm3SBB3Yz3ynGvlsUxBlDdgNy5a/YdUsKUYMJavu/IyD3ICR3iDJ6ZT3neAu4xVnArLA112Xziw+LMekLNIe3/yjykIh76c1T9g7Tg4+kbhUUlPEojMXFQryvAOhe1ms38HuQLyUT58X5LEudk5rbHzhw11uHO1ZSFkN3ejEYSu15+8Z4seWfoC8hZQgTWP/zWRa5DE1CEPJ7twGOxtPi3MbUm2vQPUTpVvzqjcctVDcF6d/zGnr4wX8YOTwQb3dN82t3s+HFTx+n+on7UBQlwswnQ==",
+                        "pvv": null,
+                        "month": "49",
+                        "year": "12",
+                        "account_default": "12010006931616"
+                    },
+                    "payments": [
+                        {
+                            "id": "PAY-FFv_f9FqShazK9jf6MTLwQ",
+                            "amount": selectAmount
+                        }
+                    ]
+                },
+                function (data) {
+                    $('#pnlResultWithdrawal').text(JSON.stringify(data));
+                }, "json");
+        }
+
+        function UploadWithdrawalHana(){
+            $.post("@ViewBag.Url/api/v1/QRWithdrawalInquiry",
+                {
+                    "REQUEST_ID": "05212022032414180839040030706120014",
+                    "MERCHANT_ID": "002",
+                    "QRINFO": {
+                        "RAW_DATA": "@Model.raw_data"
+                    },
+                    "TRNINFO": {
+                        "REQ_AMOUNT": selectAmount,
+                        "REQ_CURRENCY_CODE": "VND",
+                        "REQ_FEE_VAT": "000011000",
+                        "REQ_SETTLEMENT_AMOUNT_DATE": "20220324"
+                    },
+                    "REQ_DATETIME": "2022-03-24T14:41:11Z"
+                },
+                function (data) {
+                    $('#pnlResult').text(JSON.stringify(data));
+                }, "json");
+        }
+
+    </script>
+}
+
+
